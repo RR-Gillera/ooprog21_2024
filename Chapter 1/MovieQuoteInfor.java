@@ -1,4 +1,4 @@
-public class MovieQuoteInfo {
+public class MovieQuoteInfor {
     public static void main(String[] args) {
         String quote = "Sometimes good guys gotta do bad things to make the bad guys pay.";
         String movie = "Suits";
