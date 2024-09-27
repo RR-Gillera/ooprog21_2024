@@ -3,13 +3,13 @@ public class Billing {
    public static void main(String[] args) {
       Scanner s = new Scanner(System.in);
 
-      System.out.println("Enter the price: ");
+      System.out.print("Enter the price: ");
       double price = s.nextDouble();
 
-      System.out.println("Enter the price: ");
+      System.out.print("Enter the quantity: ");
       int quantity = s.nextInt();
 
-      System.out.println("Enter the price: ");
+      System.out.print("Enter the discount value: ");
       int discount = s.nextInt();
 
       if(discount > 0){
@@ -20,7 +20,7 @@ public class Billing {
    }
 
    public static void computeBill(double price) {
-      double total = price * 1.08;
+      double total = price * 1.08; // 1.08 so that the tax value will be automatically added in the total price.
       System.out.println("The total price for the bill is: " + total);
    }
 
@@ -31,7 +31,7 @@ public class Billing {
 
    public static void computeBill(double price, int quantity, int discount) {
       double total = price * quantity * 1.08;
-      double disctotal = (100.0 - discount) / 100;
+      double disctotal = (100.0 - discount) / 100;// here i used this formula so that we can extract the difference of the discount % from 100% then divided by 100 to get the decimal value of the percent form.
 
       total *= disctotal;
 
