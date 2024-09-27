@@ -1,29 +1,42 @@
-public class Billing{
-   public static void main(String[] args){
+import java.util.Scanner;
+public class Billing {
+   public static void main(String[] args) {
+      Scanner s = new Scanner(System.in);
 
-      computeBill(23.2);
-      computeBill(24.4, 2);
-      computeBill(24.9, 3, 5);
-      
+      System.out.println("Enter the price: ");
+      double price = s.nextDouble();
+
+      System.out.println("Enter the price: ");
+      int quantity = s.nextInt();
+
+      System.out.println("Enter the price: ");
+      int discount = s.nextInt();
+
+      if(discount > 0){
+         computeBill(price, quantity, discount);
+      } else {
+         computeBill(price, quantity);
+      }
    }
-   public static void computeBill(double price){
+
+   public static void computeBill(double price) {
       double total = price * 1.08;
-      System.out.println("The total price for the bill is: " +total);
+      System.out.println("The total price for the bill is: " + total);
    }
-   public static void computeBill(double price, int quantity){
+
+   public static void computeBill(double price, int quantity) {
       double total = price * quantity * 1.08;
-      System.out.println("The total price for the bill is: " +total);
+      System.out.println("The total price for the bill is: " + total);
    }
-   public static void computeBill(double price, int quantity, int discount){
+
+   public static void computeBill(double price, int quantity, int discount) {
       double total = price * quantity * 1.08;
-      
-         double disc = discount / 100.0;
-         double disctotal = total * disc;
-      
-         total = total - disctotal;
-         
-      System.out.println("The total price for the bill is: " +total);
-      
+      double disctotal = (100.0 - discount) / 100;
+
+      total *= disctotal;
+
+      System.out.println("The total price for the bill is: " + total);
+
    }
-   
+
 }
